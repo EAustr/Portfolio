@@ -1,0 +1,275 @@
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #0B132B;
+    color: #f7f7f7;
+    display: flex;
+    flex-direction: column;
+}
+
+.header{
+    background-color: #1C2541;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99;
+}
+
+.hamburger{
+    position: relative;
+    display: block;
+    width: 35px;
+    cursor: pointer;
+
+    appearance: none;
+    background: none;
+    outline: none;
+    border: none;
+    margin-left: auto;
+
+}
+
+
+.hamburger .bar, .hamburger::after, .hamburger::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: #FFF;
+    margin: 3px 0px;
+    transition: 0.4s;
+}
+
+.hamburger.is-active .bar{
+    opacity: 0;
+}
+
+.hamburger.is-active::before{
+    transform: rotate(-45deg) translate(-3px, 6px);
+
+}
+.hamburger.is-active::after{
+    transform: rotate(45deg) translate(-4px, -7px);
+
+}
+
+@media (max-width: 767px) {
+    .header nav {
+        display: none;
+    }
+
+    .hamburger{
+        display: block;
+    }
+}
+
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    min-height: 100vh;
+    z-index: 98;
+    background-color: #1C2541;
+    padding-top: 120px;
+    transition:  0.4s;
+}
+
+.mobile-nav.is-active{
+    right: 0;
+}
+
+.mobile-nav a{
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto 16px;
+    text-align: center;
+    margin-bottom: 16px;
+    background-color:#0B132B;
+
+    color: #FFF;
+    text-decoration: none;
+}
+
+.mobile-nav a:hover{
+    background-color: #3A406B;
+}
+
+@media (min-width: 767px) {
+    .mobile-nav {
+        display: none;
+    }
+
+    .hamburger{
+        display: none;
+    }
+}
+
+
+.header a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.header a:visited,
+.header a:hover,
+.header a:active {
+    color: white;
+}
+
+.main {
+    flex: 1;
+    padding: 20px;
+    background-color: #1C2541;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.main p {
+    font-size: 1.2em;
+    color: #f7f7f7;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card1, .card2, .card3 {
+    background-color: #3A506B;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease,background-color 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.card1:hover, .card2:hover, .card3:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    background-color: #edae49;
+}
+
+.card1IMG, .card2IMG, .card3IMG {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.buttonCard {
+    margin-top: auto;
+    padding: 15px 50px;
+    background-color: #fffffc;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.buttonCard:hover {
+    background-color: #3A506B;
+}
+
+
+.aside {
+    background-color: #3A506B;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.aside h2 {
+    color: #333;
+}
+
+/* Aside styles */
+.aside {
+    background-color: #0B132B;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.aside h2 {
+    color: #ffffff;
+}
+
+.aside a {
+    display: block;
+    color: #edeaef;
+    text-decoration: none;
+    margin: 5px 0;
+}
+
+.aside a:hover {
+    text-decoration: underline;
+}
+
+/* Footer styles */
+.footer {
+    background-color: #3A506B;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: auto;
+}
+
+.footer a {
+    color: hsl(0, 0%, 100%);
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 770px) {
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card1, .card2, .card3 {
+        width: 80%;
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .header a {
+        display: block;
+        margin: 5px 0;
+    }
+
+    .main {
+        margin: 10px;
+        padding: 10px;
+    }
+
+    .card1, .card2, .card3 {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
