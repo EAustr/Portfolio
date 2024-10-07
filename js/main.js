@@ -12,3 +12,16 @@ window.onload = function() {
         mobile_menu.classList.toggle('is-active');
     });
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    const buttons = document.querySelectorAll('.cards button');
+
+    buttons.forEach(button => {
+        button.addEventListener('click', function() {
+            const url = button.getAttribute('data-url');
+            if (url) {
+                window.location.href = url;
+            }
+        });
+    });
+});
