@@ -4,15 +4,15 @@ html, body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-color: #EFEFF0;
-    color: #153243;
+    background-color: #fafafd;
+    color: #fafafd;
     display: flex;
     flex-direction: column;
 }
 
 .header{
-    background-color: #284B63; /* Updated */
-    color: white;
+    background-color: #3b4cd0; 
+    color: #fafafd; 
     text-align: center;
     padding: 10px 0;
     display: flex;
@@ -40,6 +40,7 @@ position: absolute;
     border: none;
     margin-right: auto;
     margin-left: 20px;
+    
 
 }
 
@@ -52,6 +53,7 @@ position: absolute;
     background-color: #EFEFF0;
     margin: 3px 0px;
     transition: 0.4s;
+    
 }
 
 .hamburger.is-active .bar{
@@ -84,7 +86,7 @@ position: absolute;
     width: 100%;
     min-height: 100vh;
     z-index: 98;
-    background-color: #284B63; 
+    background-color: #3b4cd0; 
     padding-top: 120px;
     transition:  0.4s;
 }
@@ -101,7 +103,7 @@ position: absolute;
     text-align: center;
     margin-bottom: 12px;
     background-color: #EFEFF0;
-    color: #153243; 
+    color: #0c0d16; 
     padding: 15px 20px;
     font-size: 20px;
 
@@ -112,24 +114,10 @@ position: absolute;
     background-color: #DDE1E4;
 }
 
-
-
-.header a {
-    color: #EFEFF0;
-    text-decoration: none;
-    margin: 0 10px;
-}
-
-.header a:visited,
-.header a:hover,
-.header a:active {
-    color: #EFEFF0;
-}
-
 .main {
     flex: 1;
     padding: 20px;
-    background-color: #EFEFF0; 
+    background-color: #3b4cd0; 
     margin: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -139,7 +127,7 @@ position: absolute;
 
 .main p {
     font-size: 1.2em;
-    color: #153243; 
+    color: #fafafd; 
 }
 
 .cards {
@@ -149,7 +137,7 @@ position: absolute;
 }
 
 .card1, .card2, .card3 {
-    background-color: #F5F5F5; /* Updated */
+    background: linear-gradient(135deg, #f5f5f5 0%, #DDE1E4 100%);
     padding: 20px;
     margin: 20px;
     border-radius: 8px;
@@ -159,16 +147,17 @@ position: absolute;
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: transform 0.3s ease,background-color 0.3s ease, box-shadow 0.3s ease; 
+    transition: transform 0.3s ease,background 0.3s ease, box-shadow 0.3s ease; 
     cursor: pointer;
     border: none;
+    position: relative;
+    overflow: hidden;
 }
 
 .card1:hover, .card2:hover, .card3:hover {
-    transform: scale(1.05);
+    transform: scale(1.05) rotate(1deg); 
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-    background-color: #284B63; /* Updated */
-    color: #EFEFF0;
+    background: linear-gradient(135deg, #838fef 100%, #153243 0%); 
 }
 
 .card1IMG, .card2IMG, .card3IMG {
@@ -176,61 +165,28 @@ position: absolute;
     height: 200px;
     object-fit: cover;
     border-radius: 8px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.card1:hover .card1IMG,
+.card2:hover .card2IMG,
+.card3:hover .card3IMG {
+    opacity: 0.7; 
+    transform: scale(1.090); 
 }
 
 
-.aside {
-    background-color: #153243; /* Updated */
-    padding: 20px;
-    margin: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
+.card1:hover .card1IMG {
+    content: url('/IMG/tehnikums.jpg');
 }
 
-.aside h2 {
-    color: #EFEFF0; /* Updated */
+.card1 h2, .card2 h2, .card3 h2 {
+    transition: transform 0.3s ease, color 0.3s ease; 
 }
 
-.aside {
-    background-color: #0B132B;
-    padding: 20px;
-    margin: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-.aside h2 {
-    color: #EFEFF0; /* Updated */
-}
-
-.aside a {
-    display: block;
-    color: #edeaef;
-    text-decoration: none;
-    margin: 5px 0;
-}
-
-.aside a:hover {
-    text-decoration: underline;
-}
-
-.footer {
-    background-color: #284B63; /* Updated */
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    margin-top: auto;
-}
-
-.footer a {
-    color: hsl(0, 0%, 100%);
-    text-decoration: none;
-}
-
-.footer a:hover {
-    text-decoration: underline;
+.card1:hover h2, .card2:hover h2, .card3:hover h2 {
+    transform: translateY(-10px);
+    color: #fafafd; 
 }
 
 
